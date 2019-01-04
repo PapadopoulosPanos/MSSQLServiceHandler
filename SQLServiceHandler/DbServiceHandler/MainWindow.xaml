@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Width="50" TextAlignment="Right" Text="Status: " Grid.Column="0"/>
-                <TextBlock Name="ServiceStatus" Width="80" TextAlignment="Left" FontWeight="Bold" Grid.Column="1"/>
+                <TextBlock Name="ServiceStatus" Width="80" TextAlignment="Center" FontWeight="Bold" Grid.Column="1"/>
                 <TextBlock Name="ProgressPercent" Width="30" TextAlignment="Right" Grid.Column="2" />
                 <ProgressBar Name="StatusProgress" Margin="0 0 40 0" Grid.Column="3" Height="10" />
 

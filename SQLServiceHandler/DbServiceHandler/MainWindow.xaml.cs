@@ -28,7 +28,14 @@ namespace DbServiceHandler
         {
             service = new ServiceController("mssql$sqlexpress");
             InitializeComponent();
-            SetStatus();
+            try
+            {
+                SetStatus();
+            }
+            catch (Exception)
+            {
+                Service404();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -112,6 +119,15 @@ namespace DbServiceHandler
                     ServiceStatus.Text = "Pending";
                     break;
             }
+        }
+
+        private void Service404()
+        {
+            var bc = new BrushConverter();
+            ServiceStatus.Text = "Unavailable";
+            StatusProgress.Value = 100;
+            ProgressPercent.Text = "100%";
+            ServiceStatus.Background = (Brush)bc.ConvertFrom("Yellow");
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
